@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradutor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tradutor Online</h1>
+        <form method="post">
+            <textarea name="text" placeholder="Digite o texto aqui..." required></textarea>
+            <select name="source_lang">
+                <option value="auto">Detectar idioma</option>
+                <option value="en">Inglês</option>
+                <option value="pt">Português</option>
+                <option value="es">Espanhol</option>
+            </select>
+            <select name="target_lang">
+                <option value="en">Inglês</option>
+                <option value="pt">Português</option>
+                <option value="es">Espanhol</option>
+            </select>
+            <button type="submit">Traduzir</button>
+        </form>
+        {% if translation %}
+            <h2>Tradução:</h2>
+            <p>{{ translation }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
